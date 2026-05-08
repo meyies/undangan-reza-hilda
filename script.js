@@ -1,8 +1,3 @@
-/* ========================================================
-   VERSI PERBAIKAN TOTAL - BEBAS ERROR REDEKLARASI
-   ======================================================== 
-*/
-
 // 1. INITIALIZE AOS
 AOS.init({
     duration: 1000,
@@ -113,21 +108,25 @@ function loadUcapan() {
 }
 
 // 5. MUSIK & CLIPBOARD
-const audio = document.getElementById('weddingMusic');
+const weddingAudio = document.getElementById('weddingMusic');
 
-function unlockAudio() {
-    if (audio) {
-        audio.play().then(() => {
-            console.log("Audio Berhasil Diputar");
-            // Setelah berhasil bunyi, hapus semua event listener agar tidak bentrok
-            ['click', 'scroll', 'touchstart', 'mousemove'].forEach(evt => {
-                window.removeEventListener(evt, unlockAudio);
+function playMusic() {
+    if (weddingAudio) {
+        weddingAudio.play().then(() => {
+            // Jika berhasil, hapus listener agar tidak trigger terus-menerus
+            ['click', 'scroll', 'touchstart'].forEach(event => {
+                window.removeEventListener(event, playMusic);
             });
-        }).catch(error => {
-            console.log("Menunggu interaksi nyata untuk memutar musik...");
+        }).catch(err => {
+            console.log("Menunggu interaksi untuk musik...");
         });
     }
 }
+
+// Pasang listener di window agar musik jalan saat user scroll atau klik pertama kali
+window.addEventListener('click', playMusic);
+window.addEventListener('scroll', playMusic, { once: true });
+window.addEventListener('touchstart', playMusic);
 
 // Pasang listener di banyak aksi user sekaligus
 window.addEventListener('click', unlockAudio);
