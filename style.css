@@ -6,13 +6,6 @@
     --gold-light: #e8d5c4;
 }
 
-/* Jika AOS gagal jalan, paksa semua elemen muncul */
-[data-aos] {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-}
-
 * { 
     margin: 0; 
     padding: 0; 
@@ -64,10 +57,14 @@ body {
 
 .leaf {
     position: absolute;
-    background-color: var(--gold-light);
+    background-color: #e1b1a6; /* Warna pink kelopak bunga */
     border-radius: 0 100% 0 100%;
-    opacity: 0.4;
-    animation: fall linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 999;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 @keyframes fall {
