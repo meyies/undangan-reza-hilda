@@ -113,18 +113,26 @@ function loadUcapan() {
 }
 
 // 5. MUSIK & CLIPBOARD
-const audioWedding = document.getElementById('weddingMusic');
-function startPlaying() {
-    if (audioWedding) {
-        audioWedding.play().catch(() => {});
-        document.removeEventListener('click', startPlaying);
-        document.removeEventListener('scroll', startPlaying);
-        document.removeEventListener('touchstart', startPlaying);
+const audio = document.getElementById('weddingMusic');
+
+function unlockAudio() {
+    if (audio) {
+        audio.play().then(() => {
+            console.log("Audio Berhasil Diputar");
+            // Setelah berhasil bunyi, hapus semua event listener agar tidak bentrok
+            ['click', 'scroll', 'touchstart', 'mousemove'].forEach(evt => {
+                window.removeEventListener(evt, unlockAudio);
+            });
+        }).catch(error => {
+            console.log("Menunggu interaksi nyata untuk memutar musik...");
+        });
     }
 }
-document.addEventListener('click', startPlaying);
-document.addEventListener('scroll', startPlaying);
-document.addEventListener('touchstart', startPlaying);
+
+// Pasang listener di banyak aksi user sekaligus
+window.addEventListener('click', unlockAudio);
+window.addEventListener('touchstart', unlockAudio);
+window.addEventListener('scroll', unlockAudio);
 
 function copyText(id) {
     const textToCopy = document.getElementById(id).innerText;
