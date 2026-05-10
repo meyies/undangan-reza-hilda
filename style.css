@@ -519,19 +519,14 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("3.jpeg");
-  background-size: cover;
-  background-position: center;
+  background: var(--soft-blue); 
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  color: white;
+  color: var(--navy); 
   text-align: center;
-  transition:
-    transform 1s ease-in-out,
-    opacity 1s ease-in-out;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 .welcome-screen.hidden {
@@ -550,10 +545,19 @@ section {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
+.welcome-label {
+  color: var(--brown);
+  font-weight: 300;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
 .welcome-names {
   font-family: "Great Vibes", cursive;
   font-size: 3rem;
   margin: 10px 0;
+  color: var(--navy);
 }
 
 .guest-section {
@@ -561,20 +565,27 @@ section {
 }
 
 .btn-open {
-  padding: 12px 30px;
+  padding: 14px 35px;
   font-size: 1rem;
-  background: white;
-  color: #333;
+  background: var(--navy); 
+  color: white; 
   border: none;
   border-radius: 50px;
   cursor: pointer;
   font-weight: 600;
   transition: 0.3s;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(26, 42, 68, 0.2);
 }
 
 .btn-open:hover {
-  background: #f0f0f0;
+  background: var(--brown);
   transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(141, 110, 99, 0.3);
+}
+
+.btn-open i {
+  margin-right: 8px;
 }
 
 .music-control {
@@ -650,4 +661,9 @@ section {
   .family-names p {
     margin: 5px 0;
   }
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
 }

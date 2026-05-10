@@ -179,7 +179,8 @@ function openInvitation() {
     welcomeScreen.classList.add("hidden");
   }
 
-  document.body.style.overflow = "auto";
+  document.body.classList.remove("no-scroll");
+  document.body.style.overflow = "visible";
 
   if (musicBtn) {
     musicBtn.style.display = "flex";
@@ -194,7 +195,11 @@ function openInvitation() {
     });
   }
 
-  AOS.refresh();
+  setTimeout(() => {
+    AOS.refresh();
+  }, 100);
 }
 
 document.body.style.overflow = "hidden";
+
+
