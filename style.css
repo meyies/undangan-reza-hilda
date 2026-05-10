@@ -423,10 +423,17 @@ section {
     position: relative;
   }
 
+  section {
+    padding: 60px 15px; 
+    width: 100%;
+    overflow: hidden; 
+  }
+
   .mempelai-flex {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
+    width: 100%;
   }
 
   .mempelai-flex .person:nth-child(1) {
