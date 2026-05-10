@@ -1,246 +1,352 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
     <title>The Wedding of Hilda & Reza</title>
-    <link rel="icon" type="image/jpeg" href="3.jpeg">
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Amiri&display=swap" rel="stylesheet">
-    <!-- Animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="icon" type="image/jpeg" href="3.jpeg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Amiri&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <audio id="weddingMusic" loop playsinline preload="auto">
-        <source src="lagu.mp3" type="audio/mpeg">
+      <source src="lagu.mp3" type="audio/mpeg" />
     </audio>
 
     <div id="music-control" class="music-control" onclick="toggleMusic()">
-        <i class="fas fa-compact-disc"></i>
+      <i class="fas fa-compact-disc"></i>
     </div>
 
     <div id="welcome-screen" class="welcome-screen">
-    <div class="welcome-content" data-aos="fade-up">
-        <!-- Ganti dengan foto kamu atau ilustrasi seperti di gambar -->
-        <img src="3.jpeg" alt="Hilda & Reza" class="welcome-img">
-        
+      <div class="welcome-content" data-aos="fade-up">
+        <img src="3.jpeg" alt="Hilda & Reza" class="welcome-img" />
+
         <p class="welcome-label">The Wedding of</p>
         <h1 class="welcome-names">Hilda & Reza</h1>
-        
+
         <div class="guest-section">
-            <p>Dear,</p>
-            <h2 id="guest-name">Nama Tamu</h2>
+          <p>Dear,</p>
+          <h2 id="guest-name">Nama Tamu</h2>
         </div>
 
         <button class="btn-open" onclick="openInvitation()">
-            <i class="fas fa-envelope-open"></i> Buka Undangan
+          <i class="fas fa-envelope-open"></i> Buka Undangan
         </button>
+      </div>
     </div>
-</div>
 
-    <!-- Elemen Dekoratif Tambahan -->
     <div class="bg-texture"></div>
     <div class="floral-container">
-        <div class="floral-item top-left"></div>
-        <div class="floral-item top-right"></div>
-        <div class="floral-item bottom-left"></div>
-        <div class="floral-item bottom-right"></div>
+      <div class="floral-item top-left"></div>
+      <div class="floral-item top-right"></div>
+      <div class="floral-item bottom-left"></div>
+      <div class="floral-item bottom-right"></div>
     </div>
-    <!-- Wadah untuk animasi kelopak bunga jatuh -->
     <div id="leaf-container"></div>
 
-    <!-- SECTION 1: HERO -->
     <section class="hero">
-        <div class="hero-overlay"></div>    
-        <div class="container hero-content">
-            <div class="hero-text-top" data-aos="fade-down" data-aos-duration="1200">
-                <span class="wedding-label">THE WEDDING OF</span>
-            </div>
-        
-            <div class="hero-names" data-aos="fade-up" data-aos-duration="1200">
-                <h1 class="main-title">Hilda & Reza</h1>
-                <p class="hero-date">07 . 06 . 2026</p>
-            </div>
-
-            <div class="scroll-indicator">
-                <div class="mouse"></div>
-            </div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div
+          class="hero-text-top"
+          data-aos="fade-down"
+          data-aos-duration="1200"
+        >
+          <span class="wedding-label">THE WEDDING OF</span>
         </div>
+
+        <div class="hero-names" data-aos="fade-up" data-aos-duration="1200">
+          <h1 class="main-title">Hilda & Reza</h1>
+          <p class="hero-date">07 . 06 . 2026</p>
+        </div>
+
+        <div class="scroll-indicator">
+          <div class="mouse"></div>
+        </div>
+      </div>
     </section>
 
-    <!-- SECTION 2: QURAN VERSE -->
     <section class="verse">
-        <div class="container" data-aos="fade-up">
-            <div class="quran-card">
-                <p class="arabic">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا</p>
-                <p class="translation">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya..."</p>
-                <p class="surah">— Ar-Rum: 21</p>
-            </div>
+      <div class="container" data-aos="fade-up">
+        <div class="quran-card">
+          <p class="arabic">
+            وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا
+            لِّتَسْكُنُوْٓا اِلَيْهَا
+          </p>
+          <p class="translation">
+            "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan
+            untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung
+            dan merasa tenteram kepadanya..."
+          </p>
+          <p class="surah">— Ar-Rum: 21</p>
         </div>
+      </div>
     </section>
 
-    <!-- SECTION 3: MEMPELAI -->
     <section class="mempelai">
-        <div class="container">
-            <div class="glass-card">
-                <div class="mempelai-flex">
-                    <div class="person" data-aos="fade-right">
-                        <h3>Hilda Nopiyanti</h3>
-                        <p class="ig">@hilday_</p>
-                        <p class="desc">Putri Terakhir dari <br><b>Bpk. Nandang Junaedi & Ibu Nani Juhaeni</b></p>
-                    </div>
-                    
-                    <!-- Menggunakan Foto Pamer Cincin di Tengah Data Mempelai -->
-                    <img src="1.jpeg" class="char-mid" data-aos="zoom-in" alt="Pamer Cincin">
-                    
-                    <div class="person" data-aos="fade-left">
-                        <h3>Mochamad Fahreza Saputra</h3>
-                        <p class="ig">@rezasyababul</p>
-                        <p class="desc">Putra Terakhir dari <br><b>Bpk. Toto Sumirat & Ibu Iis Suryani</b></p>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="glass-card">
+          <div class="mempelai-flex">
+            <div class="person" data-aos="fade-right">
+              <h3>Hilda Nopiyanti</h3>
+              <p class="ig">@hilday_</p>
+              <p class="desc">
+                Putri Terakhir dari <br /><b
+                  >Bpk. Nandang Junaedi & Ibu Nani Juhaeni</b
+                >
+              </p>
             </div>
+
+            <img
+              src="1.jpeg"
+              class="char-mid"
+              data-aos="zoom-in"
+              alt="Pamer Cincin"
+            />
+
+            <div class="person" data-aos="fade-left">
+              <h3>Mochamad Fahreza Saputra</h3>
+              <p class="ig">@rezasyababul</p>
+              <p class="desc">
+                Putra Terakhir dari <br /><b
+                  >Bpk. Toto Sumirat & Ibu Iis Suryani</b
+                >
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- SECTION 4: WAKTU -->
     <section class="waktu">
-        <div class="container">
-            <!-- Menggunakan Foto Pose Berjalan/Bergandengan untuk Menuju Hari H -->
-            <img src="2.jpeg" class="char-small" data-aos="fade-down" alt="Pose Berjalan">
-            
-            <h2 class="gold-title">Save The Date</h2>
-            <p class="main-date">Minggu, 7 Juni 2026</p>
+      <div class="container">
+        <img
+          src="2.jpeg"
+          class="char-small"
+          data-aos="fade-down"
+          alt="Pose Berjalan"
+        />
 
-            <div class="countdown" data-aos="fade-up">
-                <div class="time-item"><span id="days">00</span><p>Hari</p></div>
-                <div class="time-item"><span id="hours">00</span><p>Jam</p></div>
-                <div class="time-item"><span id="minutes">00</span><p>Menit</p></div>
-                <div class="time-item"><span id="seconds">00</span><p>Detik</p></div>
-            </div>
+        <h2 class="gold-title">Save The Date</h2>
+        <p class="main-date">Minggu, 7 Juni 2026</p>
 
-            <div class="event-grid">
-                <div class="event-box" data-aos="flip-left">
-                    <h4>Akad Nikah</h4>
-                    <p>08.00 WIB</p>
-                    <p>Aula Vijaya Kusuma</p>
-                </div>
-                <div class="event-box" data-aos="flip-right">
-                    <h4>Resepsi</h4>
-                    <p>11.00 WIB</p>
-                    <p>Aula Vijaya Kusuma</p>
-                </div>
-            </div>
-
-            <!-- MAPS EMBED DIRECTLY -->
-            <div class="map-wrapper" data-aos="zoom-in">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.0045526758536!2d107.6008265!3d-6.890056899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e65eff88533b%3A0x6211865936888392!2sAula%20Vijaya%20Kusuma!5e0!3m2!1sen!2sid!4v1777998734218!5m2!1sen!2sid" 
-                    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-            
-            <a href="https://maps.app.goo.gl/GsabEB7jK7Ro3TCP8" target="_blank" class="btn">Buka Lokasi Google Maps</a>
+        <div class="countdown" data-aos="fade-up">
+          <div class="time-item">
+            <span id="days">00</span>
+            <p>Hari</p>
+          </div>
+          <div class="time-item">
+            <span id="hours">00</span>
+            <p>Jam</p>
+          </div>
+          <div class="time-item">
+            <span id="minutes">00</span>
+            <p>Menit</p>
+          </div>
+          <div class="time-item">
+            <span id="seconds">00</span>
+            <p>Detik</p>
+          </div>
         </div>
+
+        <div class="event-grid">
+          <div class="event-box" data-aos="flip-left">
+            <h4>Akad Nikah</h4>
+            <p>08.00 WIB</p>
+            <p>Aula Vijaya Kusuma</p>
+          </div>
+          <div class="event-box" data-aos="flip-right">
+            <h4>Resepsi</h4>
+            <p>11.00 WIB</p>
+            <p>Aula Vijaya Kusuma</p>
+          </div>
+        </div>
+
+        <div class="map-wrapper" data-aos="zoom-in">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.0045526758536!2d107.6008265!3d-6.890056899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e65eff88533b%3A0x6211865936888392!2sAula%20Vijaya%20Kusuma!5e0!3m2!1sen!2sid!4v1777998734218!5m2!1sen!2sid"
+            width="100%"
+            height="350"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+
+        <a
+          href="https://maps.app.goo.gl/GsabEB7jK7Ro3TCP8"
+          target="_blank"
+          class="btn"
+          >Buka Lokasi Google Maps</a
+        >
+      </div>
     </section>
 
-    <!-- SECTION 5: GIFT -->
     <section class="gift">
-        <div class="container">
-            <div class="gift-header" data-aos="fade-up">
-                <h2 class="gold-title">Wedding Gift</h2>
-            </div>
-
-            <div class="bank-flex">
-                <!-- Kartu BCA -->
-                <div class="bank-card" data-aos="zoom-in">
-                    <div class="bank-logo">BCA</div> <!-- Bisa diganti <img> logo BCA -->
-                    <p class="acc-label">Nomor Rekening</p>
-                    <h3 class="acc-number" id="rekBca">7773309410</h3>
-                    <p class="acc-name">a.n Hilda Nopiyanti</p>
-                    <button class="btn-copy" onclick="copyText('rekBca')">Salin No. Rekening</button>
-                </div>
-
-                <!-- Kartu BCA Syariah -->
-                <div class="bank-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="bank-logo">BCA Syariah</div>
-                    <p class="acc-label">Nomor Rekening</p>
-                    <h3 class="acc-number" id="rekBcaS">0590012258</h3>
-                    <p class="acc-name">a.n Mochamad Fahreza Saputra</p>
-                    <button class="btn-copy" onclick="copyText('rekBcaS')">Salin No. Rekening</button>
-                </div>
-            </div>
+      <div class="container">
+        <div class="gift-header" data-aos="fade-up">
+          <h2 class="gold-title">Wedding Gift</h2>
         </div>
+
+        <div class="bank-flex">
+          <div class="bank-card" data-aos="zoom-in">
+            <div class="bank-logo">BCA</div>
+            <p class="acc-label">Nomor Rekening</p>
+            <h3 class="acc-number" id="rekBca">7773309410</h3>
+            <p class="acc-name">a.n Hilda Nopiyanti</p>
+            <button class="btn-copy" onclick="copyText('rekBca')">
+              Salin No. Rekening
+            </button>
+          </div>
+
+          <div class="bank-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="bank-logo">BCA Syariah</div>
+            <p class="acc-label">Nomor Rekening</p>
+            <h3 class="acc-number" id="rekBcaS">0590012258</h3>
+            <p class="acc-name">a.n Mochamad Fahreza Saputra</p>
+            <button class="btn-copy" onclick="copyText('rekBcaS')">
+              Salin No. Rekening
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- SECTION 6: RSVP -->
     <section class="rsvp">
-        <div class="container">
-            <div class="glass-card">
-                <h2 class="gold-title" style="font-size: 2.5rem; margin-bottom: 5px;">Konfirmasi Kehadiran</h2>
-                <form id="rsvpForm">
-                    <input type="text" id="nama" placeholder="Nama Lengkap" required class="input">
-                    <select id="hadir" class="input">
-                        <option value="Hadir">Akan Hadir</option>
-                        <option value="Tidak Hadir">Berhalangan Hadir</option>
-                    </select>
-                    <textarea id="pesan" placeholder="Ucapan Doa Restu" rows="3" class="input"></textarea>
-                    <button type="submit" class="btn-dark">Kirim Ucapan</button>
-                </form>
-                <div id="listUcapan" class="ucapan-box"></div>
-                
-                <!-- Salam penutup menggunakan kembali foto Pamer Cincin/Buku Nikah atau foto lainnya jika ada -->
-                <img src="3.jpeg" class="char-footer" data-aos="fade-up" style="max-width: 200px; margin-top: 20px;">
-            </div>
+      <div class="container">
+        <div class="glass-card">
+          <h2 class="gold-title" style="font-size: 2.5rem; margin-bottom: 5px">
+            Konfirmasi Kehadiran
+          </h2>
+          <form id="rsvpForm">
+            <input
+              type="text"
+              id="nama"
+              placeholder="Nama Lengkap"
+              required
+              class="input"
+            />
+            <select id="hadir" class="input">
+              <option value="Hadir">Akan Hadir</option>
+              <option value="Tidak Hadir">Berhalangan Hadir</option>
+            </select>
+            <textarea
+              id="pesan"
+              placeholder="Ucapan Doa Restu"
+              rows="3"
+              class="input"
+            ></textarea>
+            <button type="submit" class="btn-dark">Kirim Ucapan</button>
+          </form>
+          <div id="listUcapan" class="ucapan-box"></div>
+
+          <img
+            src="3.jpeg"
+            class="char-footer"
+            data-aos="fade-up"
+            style="max-width: 200px; margin-top: 20px"
+          />
         </div>
+      </div>
     </section>
 
-    <!-- SECTION 7: THANK YOU / CLOSING -->
     <section class="thank-you">
-        <div class="container" data-aos="fade-up">
-            <div class="thank-you-content">
-                <p class="closing-text">
-                    Merupakan suatu kehormatan dan kebahagiaan bagi kami <br>
-                    apabila Bapak/Ibu/Saudara/i berkenan hadir <br>
-                    dan memberikan doa restu kepada kami.
-                </p>
-                
-                <h2 class="gold-title" style="font-size: 3rem; margin-top: 20px;">Terima Kasih</h2>
-                
-                <div class="regards">
-                    <p>Kami yang berbahagia,</p>
-                    <h3 class="names">Hilda & Reza</h3>
-                </div>
+      <div class="container" data-aos="fade-up">
+        <div class="thank-you-content">
+          <p class="closing-text">
+            Merupakan suatu kehormatan dan kebahagiaan bagi kami <br />
+            apabila Bapak/Ibu/Saudara/i berkenan hadir <br />
+            dan memberikan doa restu kepada kami.
+          </p>
 
-                <div class="family-names">
-                    <p>Kel. Bpk. Nandang Junaedi & Ibu Nani Juhaeni</p>
-                    <p>&</p>
-                    <p>Kel. Bpk. Toto Sumirat & Ibu Iis Suryani</p>
-                </div>
-            </div>
+          <h2 class="gold-title" style="font-size: 3rem; margin-top: 20px">
+            Terima Kasih
+          </h2>
+
+          <div class="regards">
+            <p>Kami yang berbahagia,</p>
+            <h3 class="names">Hilda & Reza</h3>
+          </div>
+
+          <div class="family-names">
+            <p>Kel. Bpk. Nandang Junaedi & Ibu Nani Juhaeni</p>
+            <p>&</p>
+            <p>Kel. Bpk. Toto Sumirat & Ibu Iis Suryani</p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- FOOTER CREDIT (Opsional) -->
-    <footer style="text-align: center; padding: 40px 0; background: #f9f9f9; border-top: 1px solid #eee;">
-        <div style="margin-bottom: 10px;">
-            <p style="font-size: 0.8rem; color: #888; margin-bottom: 5px;">© NusaVite.</p>
-        </div>
-        
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
-            <p style="font-family: 'Poppins', sans-serif; font-size: 0.75rem; color: #555; letter-spacing: 1px;">CREATED BY</p>
-            <a href="https://www.instagram.com/nusavite__?igsh=MTJkcW8wNHl1bDM5bA==" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 8px; background: #fff; padding: 8px 15px; border-radius: 50px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: 0.3s;">
-                <i class="fab fa-instagram" style="color: #E1306C; font-size: 1.1rem;"></i>
-                <span style="font-weight: 600; color: #333; font-size: 0.9rem;">NUSAVITE</span>
-            </a>
-        </div>
+    <footer
+      style="
+        text-align: center;
+        padding: 40px 0;
+        background: #f9f9f9;
+        border-top: 1px solid #eee;
+      "
+    >
+      <div style="margin-bottom: 10px">
+        <p style="font-size: 0.8rem; color: #888; margin-bottom: 5px">
+          © NusaVite.
+        </p>
+      </div>
+
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 5px;
+        "
+      >
+        <p
+          style="
+            font-family: &quot;Poppins&quot;, sans-serif;
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 1px;
+          "
+        >
+          CREATED BY
+        </p>
+        <a
+          href="https://www.instagram.com/nusavite__?igsh=MTJkcW8wNHl1bDM5bA=="
+          target="_blank"
+          style="
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            padding: 8px 15px;
+            border-radius: 50px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+          "
+        >
+          <i
+            class="fab fa-instagram"
+            style="color: #e1306c; font-size: 1.1rem"
+          ></i>
+          <span style="font-weight: 600; color: #333; font-size: 0.9rem"
+            >NUSAVITE</span
+          >
+        </a>
+      </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
