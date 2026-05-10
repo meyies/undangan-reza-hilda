@@ -93,19 +93,59 @@ function loadUcapan() {
 }
 
 // 5. MUSIK & CLIPBOARD
+// Deklarasi Global
 const weddingAudio = document.getElementById('weddingMusic');
-function playMusic() {
+const musicBtn = document.getElementById('music-control');
+// Gunakan selector yang lebih aman untuk ikon
+const musicIcon = document.querySelector('#music-control i');
+
+/**
+ * FUNGSI BUKA UNDANGAN
+ */
+function openInvitation() {
+    const welcomeScreen = document.getElementById('welcome-screen');
+    if (welcomeScreen) {
+        welcomeScreen.classList.add('hidden');
+    }
+
+    // Aktifkan scroll halaman
+    document.body.style.overflow = 'auto';
+
+    // Autoplay Musik & Munculkan Tombol Disk
     if (weddingAudio) {
         weddingAudio.play().then(() => {
-            ['click', 'scroll', 'touchstart'].forEach(event => {
-                window.removeEventListener(event, playMusic);
-            });
-        }).catch(() => {});
+            musicBtn.style.display = 'flex'; // Pastikan muncul
+            musicBtn.classList.add('rotating');
+        }).catch(error => {
+            console.log("Autoplay diblokir, munculkan tombol untuk manual play.");
+            musicBtn.style.display = 'flex';
+        });
+    }
+
+    // Inisialisasi/Refresh AOS agar animasi section hero muncul
+    AOS.refresh();
+}
+
+/**
+ * FUNGSI TOGGLE (PLAY/PAUSE)
+ */
+function toggleMusic() {
+    if (weddingAudio.paused) {
+        weddingAudio.play();
+        musicBtn.classList.add('rotating');
+        if (musicIcon) musicIcon.className = 'fas fa-compact-disc';
+    } else {
+        weddingAudio.pause();
+        musicBtn.classList.remove('rotating');
+        if (musicIcon) musicIcon.className = 'fas fa-pause';
     }
 }
-window.addEventListener('click', playMusic);
-window.addEventListener('scroll', playMusic, { once: true });
-window.addEventListener('touchstart', playMusic);
+
+// Tambahkan ini di bagian paling bawah untuk mematikan scroll saat start
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.style.overflow = 'hidden';
+    loadUcapan();
+});
 
 function copyText(id) {
     const textToCopy = document.getElementById(id).innerText;
@@ -132,3 +172,39 @@ function createLeaf() {
 setInterval(createLeaf, 600);
 
 window.addEventListener('DOMContentLoaded', loadUcapan);
+
+// Fungsi untuk mengambil nama dari URL
+const urlParams = new URLSearchParams(window.location.search);
+const namaTamu = urlParams.get('to');
+if (namaTamu) {
+    document.getElementById('guest-name').innerText = namaTamu;
+}
+
+function openInvitation() {
+    const welcomeScreen = document.getElementById('welcome-screen');
+    if (welcomeScreen) {
+        welcomeScreen.classList.add('hidden');
+    }
+
+    // 1. Aktifkan scroll
+    document.body.style.overflow = 'auto';
+
+    // 2. LANGSUNG AKTIFKAN ANIMASI (Tanpa menunggu status musik)
+    if (musicBtn) {
+        musicBtn.style.display = 'flex'; // Munculkan tombol
+        musicBtn.classList.add('rotating'); // Langsung putar piringan
+    }
+
+    // 3. Coba putar musik
+    if (weddingAudio) {
+        weddingAudio.play().catch(error => {
+            console.log("Musik tertunda oleh kebijakan browser, piringan tetap berputar.");
+        });
+    }
+
+    // 4. Refresh AOS
+    AOS.refresh();
+}
+
+// Opsional: Matikan scroll saat welcome screen masih muncul
+document.body.style.overflow = 'hidden';

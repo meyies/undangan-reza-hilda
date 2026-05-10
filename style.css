@@ -425,4 +425,148 @@ section {
         height: 120px; 
         opacity: 0.3; 
     }
+
+    .music-control {
+        bottom: 100px; /* Lebih tinggi sedikit untuk pengguna mobile */
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Styling Welcome Screen */
+.welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('3.jpeg'); /* Overlay gelap */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+    text-align: center;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+/* Class untuk menghilangkan welcome screen */
+.welcome-screen.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.welcome-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.welcome-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    margin: 10px 0;
+}
+
+.guest-section {
+    margin: 30px 0;
+}
+
+.btn-open {
+    padding: 12px 30px;
+    font-size: 1rem;
+    background: white;
+    color: #333;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-open:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* Tombol melayang di pojok */
+.music-control {
+    position: fixed;
+    bottom: 300px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: none; /* Muncul setelah klik buka */
+    z-index: 9999;
+    cursor: pointer;
+    border: 2px solid #8d6e63;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Animasi Putar */
+.rotating {
+    animation: spinMusic 3s linear infinite;
+}
+
+/* Pastikan animasi mengarah ke ikon jika tombol memiliki class rotating */
+.music-control.rotating i {
+    animation: spinMusic 3s linear infinite;
+}
+
+@keyframes spinMusic {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.music-control i {
+    color: #8d6e63;
+    font-size: 1.5rem;
+}
+
+.thank-you {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #fdfdfd; /* Warna putih gading tipis */
+}
+
+.thank-you-content .closing-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #555;
+}
+
+.thank-you-content .names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    color: #b08d57; /* Warna Gold */
+    margin: 10px 0;
+}
+
+.regards {
+    margin-top: 40px;
+}
+
+.family-names {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #777;
+    line-height: 1.5;
+}
+
+.family-names p {
+    margin: 5px 0;
 }

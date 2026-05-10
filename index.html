@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Amiri&display=swap" rel="stylesheet">
     <!-- Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,6 +17,29 @@
     <audio id="weddingMusic" loop playsinline preload="auto">
         <source src="lagu.mp3" type="audio/mpeg">
     </audio>
+
+    <div id="music-control" class="music-control" onclick="toggleMusic()">
+        <i class="fas fa-compact-disc"></i>
+    </div>
+
+    <div id="welcome-screen" class="welcome-screen">
+    <div class="welcome-content" data-aos="fade-up">
+        <!-- Ganti dengan foto kamu atau ilustrasi seperti di gambar -->
+        <img src="3.jpeg" alt="Hilda & Reza" class="welcome-img">
+        
+        <p class="welcome-label">The Wedding of</p>
+        <h1 class="welcome-names">Hilda & Reza</h1>
+        
+        <div class="guest-section">
+            <p>Dear,</p>
+            <h2 id="guest-name">Nama Tamu</h2>
+        </div>
+
+        <button class="btn-open" onclick="openInvitation()">
+            <i class="fas fa-envelope-open"></i> Buka Undangan
+        </button>
+    </div>
+</div>
 
     <!-- Elemen Dekoratif Tambahan -->
     <div class="bg-texture"></div>
@@ -156,7 +180,7 @@
     <section class="rsvp">
         <div class="container">
             <div class="glass-card">
-                <h2 class="gold-title" style="font-size: 2.5rem;">Konfirmasi Kehadiran</h2>
+                <h2 class="gold-title" style="font-size: 2.5rem; margin-bottom: 5px;">Konfirmasi Kehadiran</h2>
                 <form id="rsvpForm">
                     <input type="text" id="nama" placeholder="Nama Lengkap" required class="input">
                     <select id="hadir" class="input">
@@ -173,6 +197,47 @@
             </div>
         </div>
     </section>
+
+    <!-- SECTION 7: THANK YOU / CLOSING -->
+    <section class="thank-you">
+        <div class="container" data-aos="fade-up">
+            <div class="thank-you-content">
+                <p class="closing-text">
+                    Merupakan suatu kehormatan dan kebahagiaan bagi kami <br>
+                    apabila Bapak/Ibu/Saudara/i berkenan hadir <br>
+                    dan memberikan doa restu kepada kami.
+                </p>
+                
+                <h2 class="gold-title" style="font-size: 3rem; margin-top: 20px;">Terima Kasih</h2>
+                
+                <div class="regards">
+                    <p>Kami yang berbahagia,</p>
+                    <h3 class="names">Hilda & Reza</h3>
+                </div>
+
+                <div class="family-names">
+                    <p>Kel. Bpk. Nandang Junaedi & Ibu Nani Juhaeni</p>
+                    <p>&</p>
+                    <p>Kel. Bpk. Toto Sumirat & Ibu Iis Suryani</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER CREDIT (Opsional) -->
+    <footer style="text-align: center; padding: 40px 0; background: #f9f9f9; border-top: 1px solid #eee;">
+        <div style="margin-bottom: 10px;">
+            <p style="font-size: 0.8rem; color: #888; margin-bottom: 5px;">© NusaVite.</p>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+            <p style="font-family: 'Poppins', sans-serif; font-size: 0.75rem; color: #555; letter-spacing: 1px;">CREATED BY</p>
+            <a href="https://www.instagram.com/nusavite__?igsh=MTJkcW8wNHl1bDM5bA==" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 8px; background: #fff; padding: 8px 15px; border-radius: 50px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: 0.3s;">
+                <i class="fab fa-instagram" style="color: #E1306C; font-size: 1.1rem;"></i>
+                <span style="font-weight: 600; color: #333; font-size: 0.9rem;">NUSAVITE</span>
+            </a>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
